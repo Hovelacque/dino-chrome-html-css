@@ -2,19 +2,27 @@
 
 <body>
     <style>
-        .jogo{
+        .jogo {
             height: 500px;
             position: relative;
             border: 1px solid black;
         }
-        .chao{
+
+        .chao {
             position: absolute;
             bottom: 0;
         }
-        .dino{            
+
+        .dino {
             position: absolute;
+            height: 50px;
             bottom: 0;
         }
+
+        .pulo {
+            animation: pulo 500ms infinite ease-in-out;
+        }
+
         .cactus {
             position: absolute;
             right: 0;
@@ -32,13 +40,43 @@
                 right: 100%;
             }
         }
+
+        @keyframes pulo {
+            0% {
+                bottom: 0;
+            }
+
+            40% {
+                bottom: 60;
+            }
+
+            50% {
+                bottom: 60;
+            }
+
+            60% {
+                bottom: 60;
+            }
+
+            100% {
+                bottom: 0;
+            }
+        }
     </style>
 
     <div class="jogo">
-        <img src="dino.png" class="dino"/>
-        <img src="big-cactus1.png" class="cactus"/>
-        <img src="track.png" class="chao"/>
+        <img src="dino.png" class="dino" />
+        <img src="big-cactus1.png" class="cactus" />
+        <img src="track.png" class="chao" />
     </div>
+
+    <script>
+        window.addEventListener('keydown', () => {
+            const dino = document.querySelector('.dino');
+            dino.classList.add('pulo');
+            setTimeout(() => dino.classList.remove('pulo'), 500);
+        })
+    </script>
 </body>
 
 </html>
