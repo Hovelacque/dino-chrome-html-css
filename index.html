@@ -1,0 +1,44 @@
+<html>
+
+<body>
+    <style>
+        .jogo{
+            height: 500px;
+            position: relative;
+            border: 1px solid black;
+        }
+        .chao{
+            position: absolute;
+            bottom: 0;
+        }
+        .dino{            
+            position: absolute;
+            bottom: 0;
+        }
+        .cactus {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 50px;
+            animation: cactu-animation 4s infinite linear;
+        }
+
+        @keyframes cactu-animation {
+            from {
+                right: 0;
+            }
+
+            to {
+                right: 100%;
+            }
+        }
+    </style>
+
+    <div class="jogo">
+        <img src="dino.png" class="dino"/>
+        <img src="big-cactus1.png" class="cactus"/>
+        <img src="track.png" class="chao"/>
+    </div>
+</body>
+
+</html>
