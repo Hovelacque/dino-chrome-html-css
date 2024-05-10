@@ -20,7 +20,7 @@
         }
 
         .pulo {
-            animation: pulo 500ms infinite ease-in-out;
+            animation: pulo 500ms ease-in-out;
         }
 
         .cactus {
@@ -76,6 +76,25 @@
             dino.classList.add('pulo');
             setTimeout(() => dino.classList.remove('pulo'), 500);
         })
+
+        const loop = setInterval(() => {
+            const cactu = document.querySelector('.cactus');
+            const dino = document.querySelector('.dino');
+
+            const dinoPosicao = Number.parseFloat(window.getComputedStyle(dino).bottom.replace('px', ''));
+            const cactuPosicao = cactu.offsetLeft;
+
+            if (cactuPosicao <= 40 && cactuPosicao > 0 && dinoPosicao < 40) {
+                cactu.style.animation = 'none';
+                cactu.style.left = `${cactuPosicao}px`;
+
+                dino.style.animation = 'none';
+                dino.style.bottom = `${dinoPosicao}px`;
+                dino.src=  'dino-dead.png'
+
+                clearInterval(loop);
+            }
+        }, 10);
     </script>
 </body>
 
