@@ -11,8 +11,13 @@
         .dino {
             position: absolute;
             bottom: 0;
-            animation: pulo 1s infinite ease-in-out;
+            height: 100px;
         }
+
+        .pulo{
+            animation: pulo 300ms ease-in-out;
+        }
+
         .chao {
             position: absolute;
             bottom: 0;
@@ -36,6 +41,15 @@
         <img src="big-cactus1.png" class="cactu" />
         <img src="track.png" class="chao"/>
     </div>
+    <script>
+        window.addEventListener('keydown',()=>{
+            var dino = document.querySelector('.dino')
+            dino.classList.add('pulo')
+            setTimeout(()=>{
+                dino.classList.remove('pulo')
+            }, 300)
+        })
+    </script>
 </body>
 
 </html>
