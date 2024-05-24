@@ -5,7 +5,7 @@
         .cactu {
             position: absolute;
             right: 0;
-            animation: cactu-animacao 5s infinite linear;
+             animation: cactu-animacao 5s infinite linear; 
             bottom: 0;
         }
         .dino {
@@ -49,6 +49,14 @@
                 dino.classList.remove('pulo')
             }, 300)
         })
+
+        const loop = setInterval(()=>{
+            const dino = document.querySelector('.dino')
+            const cactu = document.querySelector('.cactu')
+            if(cactu.offsetLeft < 90){
+                console.log('toquei no dino!')
+            }
+        }, 10)
     </script>
 </body>
 
